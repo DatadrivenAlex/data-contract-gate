@@ -1,0 +1,34 @@
+{
+  "contract": "synthetic-orders-v1",
+  "passed": false,
+  "rows_checked": 2,
+  "error_count": 5,
+  "errors": [
+    {
+      "code": "duplicate_value",
+      "record": 3,
+      "column": "order_id"
+    },
+    {
+      "code": "below_min",
+      "record": 3,
+      "column": "total"
+    },
+    {
+      "code": "not_allowed",
+      "record": 3,
+      "column": "currency"
+    },
+    {
+      "code": "invalid_type",
+      "record": 3,
+      "column": "ordered_on"
+    },
+    {
+      "code": "pattern_mismatch",
+      "record": 3,
+      "column": "customer_code"
+    }
+  ],
+  "details_truncated": false
+}

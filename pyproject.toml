@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "data-contract-gate"
+version = "0.1.0"
+description = "Offline CSV data contracts with CI quality gates"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.10,<3", "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "PyYAML>=6,<7"]
+
+[project.scripts]
+contract-gate = "contractgate.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.8,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["contractgate"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP"]
